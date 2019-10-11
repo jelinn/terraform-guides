@@ -1,5 +1,5 @@
 # For Expressions Example
-The [For Expressions](./for-expressions) example illustrates how the new [For Expression](https://www.terraform.io/docs/configuration/expressions.html#for-expressions) can be used to iterate across multiple items in lists. It does this for several outputs, illustrating the usefulness and power of the **for** expression in several ways.  We use two tf files in this example:
+This example illustrates how the new [For Expression](https://www.terraform.io/docs/configuration/expressions.html#for-expressions) can be used to iterate across multiple items in lists. It does this for several outputs, illustrating the usefulness and power of the **for** expression in several ways.  We use two tf files in this example:
 1. main.tf creates a VPC, subnet, and 3 EC2 instances and then generates outputs related to the DNS and IP addresses of the EC2 instances.
 1. lists-and-maps-with-for.tf shows how the **for** expression can be used inside lists and maps.
 
@@ -10,7 +10,7 @@ output "private_addresses_old" {
 }
 ```
 
-We also use the new [Splat Espression](https://www.hashicorp.com/blog/terraform-0-12-generalized-splat-operator) (`[*]`):
+We also use the new [Splat Expression](https://www.hashicorp.com/blog/terraform-0-12-generalized-splat-operator) (`[*]`):
 ```
 output "private_addresses_full_splat" {
   value = [ aws_instance.ubuntu[*].private_dns ]
